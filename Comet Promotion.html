@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0f1226" />
+  <title>Join Comet — Next-Gen AI Browser</title>
+  <meta name="description" content="Join Comet — the AI browser mixing speed, privacy and built-in assistants. Use my referral link to get perks and early access." />
+  <meta name="keywords" content="Comet, AI browser, referral, AI assistant, fast browser" />
+  <meta property="og:title" content="Join Comet — Next-Gen AI Browser" />
+  <meta property="og:description" content="Join Comet — the AI browser mixing speed, privacy and built-in assistants. Use my referral link to get perks and early access." />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    /* Reset + base */
+    :root{
+      --bg:#071027;
+      --card:#0f1530aa;
+      --accent1: #7C4DFF;
+      --accent2: #00D1FF;
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.04);
+      --glass-border: rgba(255,255,255,0.08);
+      --text:#e8eefc;
+      --muted:#9fb0d6;
+      --success:#4be37b;
+      --danger:#ff6b6b;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100%;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(124,77,255,0.12), transparent 10%),
+        radial-gradient(900px 400px at 90% 80%, rgba(0,209,255,0.06), transparent 10%),
+        linear-gradient(180deg, var(--bg), #030417 120%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+    }
+    .logo{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      text-decoration:none;
+      color:var(--text);
+    }
+    .logo .mark{
+      width:44px;height:44px;border-radius:999px;
+      background:conic-gradient(from 120deg,var(--accent1),var(--accent2));
+      display:grid;place-items:center;
+      box-shadow:0 6px 20px rgba(0,0,0,0.6), inset 0 1px 6px rgba(255,255,255,0.04);
+      font-weight:700;
+      font-size:18px;
+    }
+    .logo h1{font-size:16px;margin:0}
+    nav{display:flex;gap:10px;align-items:center}
+    .btn{
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      padding:10px 16px;border-radius:12px;border:none;color:#021025;font-weight:700;cursor:pointer;
+      box-shadow:0 6px 22px rgba(124,77,255,0.12);
+    }
+    .ghost{
+      background:transparent;border:1px solid var(--glass-border);padding:8px 12px;border-radius:10px;color:var(--text);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:42px;
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; padding:0 8px}
+    }
+
+    .hero-left h2{
+      margin:0 0 12px 0;
+      font-size:36px;line-height:1.02;
+      letter-spacing:-0.4px;
+    }
+    .lead{color:var(--muted);font-size:15px;margin-bottom:20px}
+    .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .hero-visual{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      border-radius:18px;padding:18px;
+      border:1px solid var(--glass-border);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    }
+
+    /* cards */
+    .features{
+      display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;
+    }
+    .card{
+      flex:1 1 200px;background:var(--card);padding:14px;border-radius:12px;border:1px solid var(--glass-border);
+      display:flex;gap:12px;align-items:flex-start;
+      transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+    }
+    .card:hover{transform:translateY(-8px); box-shadow:0 20px 60px rgba(2,7,20,0.6)}
+    .icon{
+      width:44px;height:44px;border-radius:10px;display:grid;place-items:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .card h4{margin:0;font-size:15px}
+    .card p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+    /* referral box */
+    .referral {
+      margin-top:22px;
+      display:flex;flex-direction:column; gap:12px;
+      background:linear-gradient(180deg,var(--glass),var(--glass-2));
+      padding:14px;border-radius:12px;border:1px solid var(--glass-border);
+    }
+    .referral input{
+      width:100%;padding:10px;border-radius:10px;border:none;background:transparent;color:var(--text);outline:none;font-weight:600;
+    }
+    .referral .actions{display:flex;gap:10px}
+    .copy-success{
+      color:var(--success);font-weight:700;font-size:13px;
+    }
+
+    /* testimonials */
+    .testimonials{
+      margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    }
+    @media (max-width:900px){ .testimonials{grid-template-columns:1fr} }
+
+    .testimonial{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:14px;border-radius:12px;border:1px solid var(--glass-border);
+      color:var(--muted);font-size:14px;
+    }
+    .testimonial b{color:var(--text)}
+
+    footer{margin-top:48px;padding:20px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    small{opacity:0.9}
+
+    /* subtle comet background animation */
+    .starfield{
+      position:fixed;right:-120px;top:-80px;pointer-events:none;opacity:0.12;filter:blur(12px);
+      width:420px;height:420px;background:
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4), transparent 6%),
+      radial-gradient(circle at 80% 40%, rgba(124,77,255,0.6), transparent 6%),
+      radial-gradient(circle at 50% 80%, rgba(0,209,255,0.4), transparent 6%);
+      transform:rotate(18deg);
+      border-radius:50%;
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .hidden{display:none}
+    .pill{background:rgba(255,255,255,0.02);padding:6px 10px;border-radius:999px;border:1px solid var(--glass-border);font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="starfield" aria-hidden="true"></div>
+
+  <div class="container" role="main">
+    <header>
+      <a class="logo" href="#" aria-label="Comet referral">
+        <div class="mark">C</div>
+        <div>
+          <h1>Abhinav × Comet</h1>
+          <div class="muted" style="font-size:12px">Referral landing</div>
+        </div>
+      </a>
+      <nav>
+        <button class="ghost" id="howBtn">How it works</button>
+        <a class="btn" id="heroCTA">Try Comet — Get perks</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="Main hero">
+      <div class="hero-left">
+        <h2>Make browsing feel alive — meet Comet, the AI browser.</h2>
+        <p class="lead">Built-in AI, lightning speed, and privacy-first defaults. Sign up with my referral link to unlock perks and early access rewards.</p>
+
+        <div class="cta-row">
+          <button class="btn" id="primaryCTA">Get Comet & join perks</button>
+          <button class="ghost" id="learnMore">See features</button>
+        </div>
+
+        <div class="features" aria-hidden="false">
+          <div class="card">
+            <div class="icon">🤖</div>
+            <div>
+              <h4>AI Assistant</h4>
+              <p>Search & chat in one place — ask follow-ups naturally.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">⚡</div>
+            <div>
+              <h4>Blazing speed</h4>
+              <p>Optimized browsing for people who move fast.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">🔒</div>
+            <div>
+              <h4>Privacy first</h4>
+              <p>Cleaner tracking controls and sensible defaults.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">🎁</div>
+            <div>
+              <h4>Referral perks</h4>
+              <p>Sign up through me for boosts, early access, and more.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="referral" style="max-width:760px" aria-label="Referral box">
+          <label style="font-size:13px;color:var(--muted)">Your referral link</label>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input id="refInput" readonly value="https://plex.it/referrals/9OUDS586" aria-label="Referral link" />
+            <div class="actions" style="margin-left:auto;display:flex;gap:8px">
+              <button class="btn" id="copyBtn">Copy link</button>
+              <button class="ghost" id="openBtn">Open link</button>
+            </div>
+          </div>
+          <div id="copyMsg" class="muted" style="font-size:13px">Tip: share this on socials and your site — add UTM tags to track performance.</div>
+        </div>
+
+      </div>
+
+      <aside class="hero-visual" aria-hidden="true">
+        <!-- fancy SVG mock browser -->
+        <svg width="100%" height="100%" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:420px">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#7C4DFF"/><stop offset="1" stop-color="#00D1FF"/>
+            </linearGradient>
+          </defs>
+          <rect x="6" y="10" rx="14" ry="14" width="408" height="280" fill="#071427"/>
+          <rect x="18" y="28" rx="10" width="384" height="34" fill="#071427" stroke="#0b213a" />
+          <circle cx="34" cy="45" r="5" fill="#ff6b6b" />
+          <circle cx="50" cy="45" r="5" fill="#ffd166" />
+          <circle cx="66" cy="45" r="5" fill="#4be37b" />
+          <rect x="26" y="74" rx="8" width="360" height="186" fill="url(#g1)" opacity="0.06"/>
+          <g style="mix-blend-mode:screen" opacity="0.9">
+            <path d="M40 120c40-38 120-38 200-8 80 30 110 84 110 84" stroke="url(#g1)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </g>
+          <text x="36" y="112" fill="#dfeffc" font-size="12" font-weight="600">Comet — AI browser</text>
+          <text x="36" y="132" fill="#b6d2ff" font-size="11">Built-in assistant · Privacy-first · Fast</text>
+        </svg>
+        <div style="margin-top:12px;color:var(--muted);font-size:13px">Preview: clean referral landing with built-in CTA.</div>
+      </aside>
+    </section>
+
+    <!-- testimonials -->
+    <section aria-label="Testimonials">
+      <div class="testimonials">
+        <div class="testimonial"><b>Riya</b> — “Switched my workflow to Comet. Built-in assistant is nuts — saves me hours.”</div>
+        <div class="testimonial"><b>Sam</b> — “Cleaner than my old browser. Speed wins.”</div>
+        <div class="testimonial"><b>Alex</b> — “Used the referral and got early access perks — worth it.”</div>
+      </div>
+    </section>
+
+    <footer>
+      <small>Made by Abhinav · Promote Comet with honesty & hustle</small>
+      <div style="display:flex;gap:12px;align-items:center">
+        <span class="pill">Tech · AI · Web</span>
+        <small class="muted">© <span id="year"></span></small>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ====== CONFIG: REPLACE WITH YOUR FINAL REFERRAL LINK ======
+    const REFERRAL_LINK = "https://plex.it/referrals/9OUDS586";
+    // =================================================================
+
+    // DOM
+    const refInput = document.getElementById('refInput');
+    const copyBtn = document.getElementById('copyBtn');
+    const openBtn = document.getElementById('openBtn');
+    const primaryCTA = document.getElementById('primaryCTA');
+    const heroCTA = document.getElementById('heroCTA');
+    const yearEl = document.getElementById('year');
+    const copyMsg = document.getElementById('copyMsg');
+
+    // init
+    yearEl.textContent = new Date().getFullYear();
+    refInput.value = REFERRAL_LINK;
+
+    // copy to clipboard
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(refInput.value);
+        copyBtn.textContent = "Copied!";
+        copyBtn.style.background = "linear-gradient(90deg,#4be37b,#00D1FF)";
+        copyMsg.textContent = "Link copied — paste anywhere. Pro tip: append ?utm_source=yourname&utm_medium=referral";
+        setTimeout(() => {
+          copyBtn.textContent = "Copy link";
+          copyBtn.style.background = "";
+          copyMsg.textContent = "Tip: share this on socials and your site — add UTM tags to track performance.";
+        }, 2400);
+      } catch (err) {
+        copyMsg.textContent = "Copy failed — manually select and copy the link.";
+      }
+    });
+
+    // open link
+    function openReferral() {
+      // open in new tab with safe redirect origin query (optional)
+      const url = new URL(REFERRAL_LINK);
+      // add simple source param for tracking
+      url.searchParams.set('utm_source', 'abhinav_site');
+      window.open(url.toString(), '_blank', 'noopener,noreferrer');
+    }
+
+    openBtn.addEventListener('click', openReferral);
+    primaryCTA.addEventListener('click', openReferral);
+    heroCTA.addEventListener('click', openReferral);
+
+    // keyboard accessibility: select input on focus
+    refInput.addEventListener('focus', () => refInput.select());
+
+    // basic smooth scroll for "how it works" (if present)
+    document.getElementById('howBtn').addEventListener('click', () => {
+      document.querySelector('[aria-label="Main hero"]').scrollIntoView({behavior:'smooth'});
+    });
+
+  </script>
+</body>
+</html>
